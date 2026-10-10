@@ -1,0 +1,494 @@
+/* =========================
+   Theme & base
+========================= */
+
+:root {
+  --tf-primary: #4658c9;
+  --tf-primary-hover: #3545ab;
+  --tf-background: #f7f7fc;
+  --tf-text: #272b45;
+  --tf-muted: #73768b;
+  --tf-border: #e2e4f0;
+  --tf-soft: #edf0ff;
+  --tf-soft-border: #d6ddf6;
+}
+
+body {
+  margin: 0;
+  background: var(--tf-background);
+  color: var(--tf-text);
+  font-family: "Manrope", sans-serif;
+}
+
+#root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.taskflow-app {
+  min-height: 100vh;
+}
+
+/* =========================
+   Header
+========================= */
+
+.app-header {
+  background: #fff;
+  border-bottom: 1px solid var(--tf-border);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+  color: var(--tf-text);
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: var(--tf-primary);
+  color: #fff;
+  border-radius: 0.8rem;
+}
+
+.workspace-label {
+  color: var(--tf-muted);
+  font-size: 0.8rem;
+}
+
+/* =========================
+   Heading
+========================= */
+
+main > section:first-child {
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: linear-gradient(120deg, #3545ab, #5366cf);
+  border-radius: 1.5rem;
+  color: #fff;
+}
+
+.eyebrow {
+  color: var(--tf-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.page-title {
+  font-family: inherit;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.25;
+}
+
+main > section:first-child .page-title {
+  color: #fff;
+}
+
+main > section:first-child .eyebrow {
+  color: #e0e5ff;
+}
+
+main > section:first-child .text-secondary {
+  color: #edf0ff !important;
+}
+
+/* =========================
+   Panels & overview
+========================= */
+
+.surface {
+  background: #fff;
+  border: 1px solid var(--tf-border);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 30px rgb(48 43 58 / 3%);
+}
+
+.stat-card {
+  height: 100%;
+  padding: 1.2rem;
+  background: #fff;
+  border: 1px solid var(--tf-border);
+  border-radius: 1rem;
+}
+
+/* Keep the existing JSX class for Total tasks */
+.stat-card.stat-purple {
+  background: var(--tf-soft);
+  border-color: #d5dcfa;
+}
+
+.stat-label {
+  color: #62677d;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.stat-value {
+  color: var(--tf-primary-hover);
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--tf-primary);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+/* =========================
+   Form fields
+========================= */
+
+.form-control {
+  padding: 0.75rem 0.9rem;
+  border-color: var(--tf-border);
+  border-radius: 0.75rem;
+  font-size: 1rem;
+}
+
+.form-select {
+  padding: 0.75rem 2.25rem 0.75rem 0.9rem;
+  border-color: var(--tf-border);
+  border-radius: 0.75rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #8895e5;
+  box-shadow: 0 0 0 0.2rem rgb(70 88 201 / 12%);
+}
+
+/* =========================
+   Main button & filters
+========================= */
+
+.btn-brand {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--tf-primary);
+  --bs-btn-border-color: var(--tf-primary);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--tf-primary-hover);
+  --bs-btn-hover-border-color: var(--tf-primary-hover);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--tf-primary-hover);
+  --bs-btn-active-border-color: var(--tf-primary-hover);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: var(--tf-primary);
+  --bs-btn-disabled-border-color: var(--tf-primary);
+  --bs-btn-focus-shadow-rgb: 70, 88, 201;
+
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+}
+
+.filter-btn {
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--tf-border);
+  border-radius: 0.65rem;
+  color: var(--tf-muted);
+  font-size: 0.8rem;
+}
+
+.filter-btn:hover,
+.filter-btn.is-active {
+  background: #e8ebff;
+  border-color: #bec6f4;
+  color: var(--tf-primary-hover);
+}
+
+/* =========================
+   Task cards
+========================= */
+
+.task-card {
+  padding: 1.1rem;
+  border: 1px solid var(--tf-border);
+  border-left: 3px solid #8998df;
+  border-radius: 0.9rem;
+  transition: border-color 0.2s;
+}
+
+.task-card:hover {
+  border-color: #aab5ef;
+}
+
+.task-title,
+.task-description,
+.task-meta {
+  overflow-wrap: anywhere;
+}
+
+.task-title {
+  flex: 1 1 12rem;
+  line-height: 1.5;
+}
+
+.task-meta {
+  padding: 0.35rem 0.6rem;
+  background: #f2f4fc;
+  border-radius: 0.45rem;
+  color: #62677d;
+  font-size: 0.75rem;
+}
+
+.task-meta.is-overdue {
+  background: #fff0ed;
+  color: #b04f3c;
+}
+
+/* =========================
+   Status badges
+========================= */
+
+.badge {
+  padding: 0.5rem 0.65rem;
+  border-radius: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.badge-new {
+  background: var(--tf-soft);
+  border: 1px solid var(--tf-soft-border);
+  color: var(--tf-primary-hover);
+}
+
+/* =========================
+   Status dropdown
+========================= */
+
+.status-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #f2f4ff;
+  border: 1px solid var(--tf-soft-border);
+  border-radius: 0.8rem;
+  color: var(--tf-primary-hover);
+  font-weight: 600;
+  text-align: left;
+}
+
+.status-trigger:hover,
+.status-trigger.show {
+  background: var(--tf-soft);
+  border-color: #8998df;
+  color: var(--tf-primary-hover);
+}
+
+.status-trigger:focus-visible {
+  box-shadow: 0 0 0 0.2rem rgb(70 88 201 / 15%);
+}
+
+.status-trigger:disabled {
+  background: #f2f4ff;
+  border-color: var(--tf-soft-border);
+  color: var(--tf-primary-hover);
+  opacity: 0.65;
+}
+
+.status-menu {
+  min-width: 0;
+  padding: 0.45rem;
+  background: #fff;
+  border: 1px solid var(--tf-border);
+  border-radius: 0.9rem;
+  box-shadow: 0 12px 32px rgb(39 43 69 / 12%);
+}
+
+.status-option {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem;
+  border-radius: 0.6rem;
+  color: #555b72;
+  font-size: 0.9rem;
+  white-space: normal;
+}
+
+.status-option:hover,
+.status-option:focus,
+.status-option.is-selected {
+  background: var(--tf-soft);
+  color: var(--tf-primary-hover);
+}
+
+.status-option.is-selected {
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot-new {
+  background: #8998df;
+}
+
+.dot-in_progress {
+  background: #d9a441;
+}
+
+.dot-completed {
+  background: #52977d;
+}
+
+/* =========================
+   Edit & delete buttons
+========================= */
+
+.btn-edit,
+.btn-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.6rem 1.15rem;
+  border-radius: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-edit {
+  --bs-btn-color: #3545ab;
+  --bs-btn-bg: #edf0ff;
+  --bs-btn-border-color: #d6ddf6;
+  --bs-btn-hover-color: #2e3d96;
+  --bs-btn-hover-bg: #e0e6ff;
+  --bs-btn-hover-border-color: #b9c5f2;
+  --bs-btn-active-color: #2e3d96;
+  --bs-btn-active-bg: #e0e6ff;
+  --bs-btn-active-border-color: #b9c5f2;
+  --bs-btn-disabled-color: #3545ab;
+  --bs-btn-disabled-bg: #edf0ff;
+  --bs-btn-disabled-border-color: #d6ddf6;
+  --bs-btn-focus-shadow-rgb: 70, 88, 201;
+}
+
+.btn-delete {
+  --bs-btn-color: #a84652;
+  --bs-btn-bg: #fff1f3;
+  --bs-btn-border-color: #f0d4da;
+  --bs-btn-hover-color: #923442;
+  --bs-btn-hover-bg: #fbe2e7;
+  --bs-btn-hover-border-color: #e5b5bf;
+  --bs-btn-active-color: #923442;
+  --bs-btn-active-bg: #fbe2e7;
+  --bs-btn-active-border-color: #e5b5bf;
+  --bs-btn-disabled-color: #a84652;
+  --bs-btn-disabled-bg: #fff1f3;
+  --bs-btn-disabled-border-color: #f0d4da;
+  --bs-btn-focus-shadow-rgb: 168, 70, 82;
+}
+
+/* =========================
+   Empty state
+========================= */
+
+.empty-state {
+  padding: 2.5rem 1rem;
+  background: var(--tf-background);
+  border: 1px dashed #d6daf0;
+  border-radius: 0.9rem;
+  text-align: center;
+}
+
+.empty-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  background: #e8ebff;
+  border-radius: 1rem;
+  color: var(--tf-primary);
+  font-size: 1.3rem;
+}
+
+/* =========================
+   SweetAlert
+========================= */
+
+.swal2-popup.taskflow-popup {
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 1.5rem;
+  color: var(--tf-text);
+  font-family: "Manrope", sans-serif;
+  box-shadow: 0 20px 70px rgb(39 43 69 / 15%);
+}
+
+.taskflow-popup .taskflow-popup-title {
+  color: var(--tf-text);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.taskflow-popup .taskflow-popup-text {
+  color: var(--tf-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.taskflow-popup .taskflow-popup-actions {
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn-delete-confirm,
+.btn-alert-cancel {
+  min-height: 44px;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+}
+
+.btn-delete-confirm {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #b64e5e;
+  --bs-btn-border-color: #b64e5e;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #9e3f4e;
+  --bs-btn-hover-border-color: #9e3f4e;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #9e3f4e;
+  --bs-btn-active-border-color: #9e3f4e;
+  --bs-btn-focus-shadow-rgb: 182, 78, 94;
+}
+
+.btn-alert-cancel {
+  --bs-btn-color: #3545ab;
+  --bs-btn-bg: #edf0ff;
+  --bs-btn-border-color: #d6ddf6;
+  --bs-btn-hover-color: #3545ab;
+  --bs-btn-hover-bg: #dfe5ff;
+  --bs-btn-hover-border-color: #bec9f4;
+  --bs-btn-active-color: #3545ab;
+  --bs-btn-active-bg: #dfe5ff;
+  --bs-btn-active-border-color: #bec9f4;
+  --bs-btn-focus-shadow-rgb: 70, 88, 201;
+}
