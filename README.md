@@ -35,6 +35,14 @@ taskflow/
 - MySQL
 - Git
 
+## Screenshots
+
+### Home
+![TaskFlow home](docs/screenshots/home.png)
+
+### Task Management
+![Task creation and task list](docs/screenshots/add.png)
+
 ## Local Setup
 
 ### 1. Clone the repository
